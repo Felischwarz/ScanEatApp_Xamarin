@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ScanEatApp"
+             x:Class="ScanEatApp.AddProductPage"
+             BackgroundColor="#E1E2E1">
+
+    <ContentPage.BindingContext>
+        <local:AddProductPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <Editor Placeholder="Enter EAN or productname" Grid.ColumnSpan="2" Text="{Binding ProductToAdd}" BackgroundColor="White">
+            </Editor>
+            <Button Text="Save" Command="{Binding SaveCmd}" Grid.Row="1" BackgroundColor="#a1887f"/>
+            <Button Text="Clear" Command="{Binding ClearCmd}" Grid.Row="1" Grid.Column="1" BackgroundColor="#a1887f"/>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

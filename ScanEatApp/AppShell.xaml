@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell  xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="ScanEatApp.AppShell"
+        xmlns:views="clr-namespace:ScanEatApp"
+        BackgroundColor="#64ba69">
+
+    <TabBar FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="My Fridge">
+            <views:MyFridgePage />
+        </ShellContent>
+        <ShellContent Title="Shopping List">
+            <views:ShoppingListPage />
+        </ShellContent>
+    </TabBar>
+
+ 
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="HighlightedText" TargetType="Element">
+                
+                <Setter Property="Shell.TabBarTitleColor" Value="#000000"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource HighlightedText}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+</Shell>
+

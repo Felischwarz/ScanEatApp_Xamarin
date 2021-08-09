@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScanEatApp.EanProductDetailPage"
+             Title="{Binding Product.name}"
+             BackgroundColor="#E1E2E1">
+
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Product_Properties}" ItemsUpdatingScrollMode="KeepLastItemInView">
+            <CollectionView.Header>
+                <StackLayout>
+                    <Grid BackgroundColor="#98ee99">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="70"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Button Text="Add to householdlist"      
+                        Grid.ColumnSpan="2"
+                        Grid.Row="2"
+                        BackgroundColor="#a1887f"/>
+
+
+                    </Grid>
+                </StackLayout>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Padding="0,0,0,1">
+                        <Frame Padding="0" HasShadow="True" BackgroundColor="#ffffff" >
+                            <Label Text="{Binding .}" FontSize="17" TextColor="black" Padding="15" />
+                        </Frame>
+                    </ContentView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>
